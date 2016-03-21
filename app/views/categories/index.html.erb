@@ -1,0 +1,131 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rlist</title>
+</head>
+<body>
+
+<!-- BREADCRUMBS PATH NAV PANEL -->
+<div class="row">
+  <div class="large-3 medium-3 columns" >  <a href="http://localhost:3000">RList</a>  </div>
+  <div class="large-3 medium-3 columns" > <h6> <a href="http://localhost:3000"> rlist > </a>  </h6> </div>
+  <hr>
+</div>
+<!-- END BREADCRUMBS PATH NAV PANEL -->
+
+<!-- CONTENT AREA ROW -->
+<div class="row">
+
+  <!-- MENU-NAV-BOX    LEFT  (1st COLUMN) -->
+  <div class="large-3 medium-3 columns" id="menu-nav-box">
+    <p>
+      <br /> <%= link_to 'Post to classfieds', new_listing_path %>
+      <br />my account
+      <br />log out
+    </p>
+    <form>
+      <label>Search in RList</label>
+      <input type="text" placeholder="search" />
+      <input type="text" placeholder="where" />
+      <div class="row">
+        <div class="large-12 columns">
+          <select>
+            <option value="community">Community</option>
+            <option value="personals">Personals</option>
+            <option value="services">Services</option>
+            <option value="housing">Housing</option>
+            <option value="for sale">For Sale</option>
+            <option value="jobs">Jobs</option>
+          </select>
+        </div>
+      </div>
+      <a href="#" class="small button">SEARCH</a><br/>
+    </form>
+  </div>
+  <!-- END MENU-NAV-BOX    LEFT  (1st COLUMN) -->
+
+
+  <!-- 2nd COLUMN CONTENT AREA  (CATEGORIES AND SUBCATEGORIES) -->
+  <div class="large-3 medium-3 columns">
+    <%= @inspect_var %>
+
+    <p>
+      <%= link_to 'Community', category_path(@community) %>
+      <% @community.subcategories.each do |sc|  %>
+          <br> <%= link_to sc.name, category_subcategory_path(@community, sc) %>
+      <% end %>
+    </p>
+
+    <p>
+      <%= link_to 'Personals', category_path(@personals) %>
+      <% @personals.subcategories.each do |sc|  %>
+          <br> <%= link_to sc.name, category_subcategory_path(@personals, sc) %>
+      <% end %>
+    </p>
+
+    <p>
+      <%= link_to 'Services', category_path(@services) %>
+      <% @services.subcategories.each do |sc|  %>
+          <br> <%= link_to sc.name, category_subcategory_path(@services, sc) %>
+      <% end %>
+    </p>
+
+  </div>
+  <!-- END 2nd COLUMN CONTENT AREA  (CATEGORIES AND SUBCATEGORIES) -->
+
+  <!-- 3rd COLUMN CONTENT AREA (CATEGORIES AND SUBCATS) -->
+  <div class="large-3 medium-3 columns">
+
+    <p>
+      <%= link_to 'Housing', category_path(@housing) %>
+      <% @housing.subcategories.each do |sc|  %>
+          <br> <%= link_to sc.name, category_subcategory_path(@housing, sc) %>
+      <% end %>
+    </p>
+
+    <p>
+      <%= link_to 'For Sale', category_path(@for_sale) %>
+      <% @for_sale.subcategories.each do |sc|  %>
+          <br> <%= link_to sc.name, category_subcategory_path(@for_sale, sc) %>
+      <% end %>
+    </p>
+
+  </div>
+  <!-- END 3rd COLUMN CONTENT AREA (CATEGORIES AND SUBCATS)           -->
+
+
+  <!-- 3rd COLUMN CONTENT AREA (CATEGORIES AND SUBCATS) -->
+  <div class="large-3 medium-3 columns">
+    <p>
+      <%= link_to 'Jobs', category_path(@jobs) %>
+      <% @jobs.subcategories.each do |sc|  %>
+          <br> <%= link_to sc.name, category_subcategory_path(@jobs, sc) %>
+      <% end %>
+    </p>
+  </div>
+  <!-- END 3rd COLUMN CONTENT AREA (CATEGORIES AND SUBCATS)           -->
+
+
+</div>
+<!-- END CONTENT AREA ROW -->
+
+
+
+
+<!--   FOOTER -->
+<hr>
+<footer>
+  <div class="row">
+    <div class="large-12 medium-12 columns">
+      <p> <%= link_to 'help', help_path %> <%= link_to 'faq', faq_path %>   info static scamms </p>
+    </div>
+  </div>
+</footer>
+<!-- END OF FOOTER -->
+
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>show</title>
+</head>
+<body>
+
+<!-- BREADCRUMBS PATH NAV PANEL -->
+<div class="row">
+  <div class="large-3 medium-3 columns" >  <a href="http://localhost:3000">RList</a>  </div>
+  <div class="large-3 medium-3 columns" > <h6> <a href="http://localhost:3000"> rlist > </a> <a href="#"> subcategory > show </a> </h6> </div>
+  <hr>
+</div>
+<!-- END BREADCRUMBS PATH NAV PANEL -->
+
+
+<!-- CONTENT AREA ROW -->
+<div class="row">
+
+
+  <!-- MENU-NAV-BOX    LEFT  (1st COLUMN) -->
+  <div class="large-3 medium-3 columns" id="menu-nav-box">
+    <p>
+      <br />Post to classfieds
+      <br />my account
+      <br />log out
+    </p>
+    <form>
+      <label>Search in RList</label>
+      <input type="text" placeholder="search" />
+      <input type="text" placeholder="where" />
+      <div class="row">
+        <div class="large-12 columns">
+          <select>
+            <option value="community">Community</option>
+            <option value="personals">Personals</option>
+            <option value="services">Services</option>
+            <option value="housing">Housing</option>
+            <option value="for sale">For Sale</option>
+            <option value="jobs">Jobs</option>
+          </select>
+        </div>
+      </div>
+      <a href="#" class="small button">SEARCH</a><br/>
+    </form>
+  </div>
+  <!-- END MENU-NAV-BOX    LEFT  (1st COLUMN) -->
+
+
+  <!-- 2nd COLUMN CONTENT AREA  (CONTENT of SELECTED CATEGORY) -->
+  <div class="large-9 medium-9 columns">
+      <a href="#"> CONTENT of <%= Subcategory.find(params['id']).name %></a>
+
+    <br>
+    <a href="#" class="button round">newest</a> <a href="#" class="button round">oldest</a> <a href="#" class="button round">lowest price</a> <a href="#" class="button round">highest price</a>
+    <p>
+      <br> January 18   Listing is here
+      <br> February 23  Listing is here
+      <br> February 27  Listing is here
+      <br> March 18     Listing is here
+    </p>
+
+    <p>
+      <br> test
+      <br> test
+      <br> test
+      <br> test
+    </p>
+
+    <p>
+      <br> test
+      <br> test
+      <br> test
+      <br> test
+    </p>
+
+    <p>
+      <% params.each do |key,value| %>
+      <%=  key + '  ' + value %>
+      <% end %>
+      <br>
+      <%= params.inspect() %>
+
+      <br>
+      <% @currentSubcategory = Subcategory.find(1).name %>
+      <%= @currentSubcategory  %>
+    </p>
+
+  </div>
+  <!-- END 2nd COLUMN CONTENT AREA  (CATEGORIES AND SUBCATEGORIES) -->
+
+
+</div>
+<!-- END CONTENT AREA ROW -->
+
+
+
+
+<!--   FOOTER -->
+<hr>
+<footer>
+  <div class="row">
+    <div class="large-12 medium-12 columns">
+      <p> <%= link_to 'help', help_path %> <%= link_to 'faq' %>   info static scamms </p>
+    </div>
+  </div>
+</footer>
+<!-- END OF FOOTER -->
+
+
+</body>
+</html>
