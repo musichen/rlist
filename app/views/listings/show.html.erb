@@ -1,3 +1,11 @@
 <p> LISTING </p>
 
-<%= Listing.find(params['id']).inspect %>
+ID: <%= @listing.id %> <br>
+Title: <%= @listing.title %><br>
+Description: <%= @listing.description %><br>
+City: <%= @listing.city %><br>
+State: <%= @listing.state %><br>
+Zipcode: <%= @listing.zipcode %><br>
+Created_at: <%= @listing.created_at %><br>
+Updated_at: <%= @listing.updated_at %><br>
+

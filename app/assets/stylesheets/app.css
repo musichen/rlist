@@ -1,0 +1,18 @@
+/***********************  GENERAL STYLES  ***********************/
+
+
+/************************* FORM  ********************************/
+
+.form_text_field {
+    width: 50%;
+    border-radius: 5px;
+}
+
+.form_text_area {
+    width: 54.5%;
+    border-radius: 5px;
+}
+
+.form_select {
+    width: 20%;
+}

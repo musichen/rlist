@@ -1,0 +1,25 @@
+<p> ALL LISTINGS </p>
+
+<% @listings.each do |l| %>
+ID: <%= l.id %>
+Title: <%= l.title %><br>
+Description: <%= l.description %><br>
+City: <%= l.city %><br>
+State: <%= l.state %><br>
+Zipcode: <%= l.zipcode %><br>
+Created_at: <%= l.created_at %><br>
+Updated_at: <%= l.updated_at %><br>
+<p> ---------------------------------------------------------- </p><br>
+
+<% end %>
+
+
+<!--
+    t.string   "title"
+    t.text     "description"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+-->

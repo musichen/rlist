@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<%= javascript_include_tag 'listings.js'  %>
+
 <!-- BREADCRUMBS PATH NAV PANEL -->
 <div class="row">
   <div class="large-3 medium-3 columns" >  <a href="http://localhost:3000">RList</a>  </div>
@@ -56,16 +58,20 @@
       <h3> <a href="#"> POST new classfied item </a> </h3>
 
     <%= form_for @listing do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-    <%= f.label :city %>
-    <%= f.text_field :city%>
-    <%= f.label :state %>
-    <%= f.text_field :state%>
-    <%= f.label :zipcode %>
-    <%= f.text_field :zipcode%>
+
+    <p> <%= f.label :title %>
+    <%= f.text_field :title, class: "form_text_field" %> </p>
+    <p><%= f.text_area :description, class: "form_text_area", placeholder: " enter description here " %> </p>
+    <p><%= f.label :category_id %>
+    <%= f.select :category_id, Category.all.map {|f| [f.name, f.id]}, class: "form_select" %> </p>
+    <p><%= f.label :subcategory_id %>
+    <%= f.select :subcategory_id, Subcategory.all.map {|f| [f.name, f.id]} %> </p>
+    <p><%= f.label :city %>
+    <%= f.text_field :city, class: "form_text_field" %> </p>
+    <p><%= f.label :state %>
+    <%= f.text_field :state, class: "form_text_field" %> </p>
+    <p><%= f.label :zipcode %>
+    <%= f.text_field :zipcode, class: "form_text_field" %> </p>
     <%= f.submit %>
     <% end %>
 
