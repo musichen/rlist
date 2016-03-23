@@ -10,8 +10,7 @@ Rails.application.routes.draw do
 
   match '/help', to: 'pages#help', via: :get
   match '/faq', to: 'pages#faq', via: :get
-
-  match '/subcategories/find_by_category', to: 'subcategories#find_by_category', via: post
+  match '/subcategories/find_by_category', to: 'subcategories#find_by_category', via: :post
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

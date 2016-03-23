@@ -56,38 +56,23 @@
 
     <br>
     <a href="#" class="button round">newest</a> <a href="#" class="button round">oldest</a> <a href="#" class="button round">lowest price</a> <a href="#" class="button round">highest price</a>
-    <p>
-      <br> January 18   Listing is here
-      <br> February 23  Listing is here
-      <br> February 27  Listing is here
-      <br> March 18     Listing is here
-    </p>
 
-    <p>
-      <br> test
-      <br> test
-      <br> test
-      <br> test
-    </p>
 
-    <p>
-      <br> test
-      <br> test
-      <br> test
-      <br> test
-    </p>
+    <% if @listings.present? %>
+        <p>
+          <% @listings.each do |listing|  %>
+              <span class="rlist_date_grey">  <%= listing.created_at.strftime('%B %d, %Y') %> </span>
+              ( <%= listing.city %>, <%= listing.state %>, zip: <%= listing.zipcode %> )
+              <b> <%= link_to listing.title, listing  %>  </b>
+              </p>
+              <hr>
+          <% end %>
 
-    <p>
-      <% params.each do |key,value| %>
-      <%=  key + '  ' + value %>
-      <% end %>
-      <br>
-      <%= params.inspect() %>
 
-      <br>
-      <% @currentSubcategory = Subcategory.find(1).name %>
-      <%= @currentSubcategory  %>
-    </p>
+    <% else %>
+        <p> No listings found! </p>
+    <% end %>
+
 
   </div>
   <!-- END 2nd COLUMN CONTENT AREA  (CATEGORIES AND SUBCATEGORIES) -->

@@ -7,6 +7,10 @@ Description: <%= l.description %><br>
 City: <%= l.city %><br>
 State: <%= l.state %><br>
 Zipcode: <%= l.zipcode %><br>
+Category_id: <%= l.category_id %><br>
+Category_name: <%= Category.find(l.category_id).name %><br>
+Subcategory_id: <%= l.subcategory_id %><br>
+Subcategory_name: <%= Subcategory.find(l.subcategory_id).name %><br>
 Created_at: <%= l.created_at %><br>
 Updated_at: <%= l.updated_at %><br>
 <p> ---------------------------------------------------------- </p><br>
@@ -20,6 +24,8 @@ Updated_at: <%= l.updated_at %><br>
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
+    t.integer  "category_id"
+    t.integer  "subcategory_id"
     t.datetime "created_at"
     t.datetime "updated_at"
 -->
